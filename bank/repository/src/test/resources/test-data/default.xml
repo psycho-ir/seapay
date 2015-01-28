@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset xmlns="http://samenea.org/dbunit.xsd" >
+    <table name="BankTransactionInfo">
+        <column>id</column>
+        <column>transactionId</column>
+        <column>bankName</column>
+        <column>paymentResponseParams</column>
+        <column>transactionStartParams</column>
+        <column>version</column>
+        <row>
+            <value description="id">-1</value>
+            <value description="transactionId">123</value>
+            <value description="bankName">mellat</value>
+            <value description="paymentResponseParams">Key1#!#value1</value>
+            <value description="transactionStartParams">Key1#!#value1#;#Key2#!#value2</value>
+            <value description="version">0</value>
+        </row>
+    </table>
+</dataset>

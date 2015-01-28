@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<table name="MERCHANT">
+		<column>id</column>
+		<column>version</column>
+		<column>merchantId</column>
+        <column>password</column>
+		<column>title</column>
+		<row>
+			<value description="id">-1</value>
+			<value description="version">0</value>
+			<value description="merchantId">M-100</value>
+            <value description="password">123456</value>
+			<value description="title">title</value>
+		</row>
+	</table>
+	<table name="SERVICE">
+		<column>id</column>
+		<column>version</column>
+		<column>servicename</column>
+		<row>
+			<value description="id">-1</value>
+			<value description="version">0</value>dd
+			<value description="servicename">S-100</value>
+		</row>
+	</table>
+    <table name="MERCHANT_SERVICE">
+        <column>MERCHANT_ID</column>
+        <column>SERVICES_ID</column>
+        <row>
+            <value>-1</value>
+            <value>-1</value>
+        </row>
+    </table>
+	<table name="XORDER">
+		<column>id</column>
+		<column>version</column>
+		<column>callbackurl</column>
+		<column>customerid</column>
+		<column>orderid</column>
+		<column>servicename</column>
+		<column>transactionid</column>
+		<column>merchant_id</column>
+	</table>
+</dataset>

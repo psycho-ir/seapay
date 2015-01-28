@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <context:component-scan base-package="com.samenea.seapay" />
+    <!--Activates @Required, @Autowired, @PostConstruct, @PreDestroy and @Resource -->
+    <context:annotation-config />
+    <!--This switches on the load-time weaving for @Configurable annotated classes -->
+    <context:spring-configured />
+	<import resource="classpath:contexts-commons-hibernate/*.xml"/>
+    <import resource="classpath:/contexts/config.xml" />
+
+    <bean id="fullXmlDataFileLoader" class="org.dbunit.util.fileloader.FullXmlDataFileLoader"/>
+    <bean id="orderFactory" class="com.samenea.seapay.merchant.model.OrderFactory"/>
+</beans>
+       

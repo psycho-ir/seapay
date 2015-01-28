@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mockito="http://www.mockito.org/spring/mockito"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.mockito.org/spring/mockito http://www.mockito.org/spring/mockito.xsd">
+    <mockito:mock id="environment" class="com.samenea.commons.component.utils.Environment"/>
+    <mockito:mock id="bankRepository" class="com.samenea.seapay.bank.BankRepository" />
+    <mockito:mock id="bankAccountRepository" class="com.samenea.seapay.bank.BankAccountRepository" />
+    <mockito:mock id="gatewayFinder" class="com.samenea.seapay.bank.gateway.GatewayFinder" />
+    <mockito:mock id="gatewayPlugin" class="com.samenea.seapay.bank.gateway.model.GatewayPlugin" />
+    <mockito:mock id="bankTransactionInfoRepository" class="com.samenea.seapay.bank.model.BankTransactionInfoRepository" />
+</beans>

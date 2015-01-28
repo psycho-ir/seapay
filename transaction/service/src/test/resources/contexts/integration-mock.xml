@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mockito="http://www.mockito.org/spring/mockito"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.mockito.org/spring/mockito http://www.mockito.org/spring/mockito.xsd">
+      
+	<bean id="environment" class="com.samenea.commons.component.utils.DefaultEnvironment"/>
+	<mockito:mock id="merchantService" class="com.samenea.seapay.merchant.IMerchantService"/>
+	<mockito:mock id="bankTransactionService" class="com.samenea.seapay.bank.model.IBankTransactionService"/>
+	<bean id="sessionRepository" class="com.samenea.seapay.session.repository.SessionRepositoryHibernate"/>
+    <mockito:mock id="idGeneratorFactory" class="com.samenea.commons.idgenerator.service.IDGeneratorFactory" />
+</beans>

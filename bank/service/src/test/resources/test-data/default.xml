@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <table name="UnknownTransaction">
+        <column>id</column>
+        <column>version</column>
+        <column>transactionId</column>
+        <column>createdate</column>
+        <column>status</column>
+        <column>lastupdatedate</column>
+        <column>accountnumber</column>
+    </table>
+</dataset>

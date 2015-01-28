@@ -1,0 +1,17 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.1">
+    <deployment>
+        <exclusions>
+            <module name="org.slf4j"/>
+            <module name="org.apache.log4j"/>
+            <module name="org.apache.commons.logging"/>
+        </exclusions>
+        <dependencies>
+            <system>
+                <paths>
+                    <path name="com/sun/net/ssl"/>
+                    <path name="com/sun/net/ssl/internal/ssl"/>
+                </paths>
+            </system>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration
+2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition name="bank/banks" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/bank/PermittedBanks.jsp"></put-attribute>
+    </definition>
+    <definition name="bank/redirect" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/bank/Redirector.jsp"></put-attribute>
+    </definition>
+    <definition name="bank/stub"  extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/bank/StubBank.jsp"></put-attribute>
+    </definition>
+</tiles-definitions>

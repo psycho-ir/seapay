@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+        <artifactId>model</artifactId>
+        <groupId>com.samenea</groupId>
+        <version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>com.samenea.seapay.merchant</groupId>
+	<artifactId>seapay-merchant-model</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.samenea.seapay.spec</groupId>
+			<artifactId>seapay-spec</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+        <dependency>
+            <groupId>com.samenea.idgenerator</groupId>
+            <artifactId>idgenerator-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+	</dependencies>
+
+
+
+</project>

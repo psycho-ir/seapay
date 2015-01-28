@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mockito="http://www.mockito.org/spring/mockito"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.mockito.org/spring/mockito http://www.mockito.org/spring/mockito.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Scans the classpath for annotated components @Component, @Repository,
+        @Service, and @Controller -->
+    <context:component-scan base-package="com.samenea.seapay.transaction"/>
+    <!--Activates @Required, @Autowired, @PostConstruct, @PreDestroy and @Resource -->
+    <context:annotation-config/>
+    <!--This switches on the load-time weaving for @Configurable annotated classes -->
+    <context:spring-configured/>
+
+    <mockito:mock id="environment" class="com.samenea.commons.component.utils.DefaultEnvironment"/>
+    <mockito:mock id="merchantService" class="com.samenea.seapay.merchant.IMerchantService"/>
+    <mockito:mock id="idGeneratorFactory" class="com.samenea.commons.idgenerator.service.IDGeneratorFactory"/>
+    <mockito:mock id="sessionRepository" class="com.samenea.seapay.session.model.SessionRepository"/>
+    <mockito:mock id="transactionFactory" class="com.samenea.seapay.transaction.model.ITransactionFactory"/>
+    <mockito:mock id="transactionRepository" class="com.samenea.seapay.transaction.model.repository.TransactionRepository"/>
+    <mockito:mock id="bankTransactionService" class="com.samenea.seapay.bank.model.IBankTransactionService"/>
+    <mockito:mock id="transactionService" class="com.samenea.seapay.transaction.ITransactionService"/>
+</beans>

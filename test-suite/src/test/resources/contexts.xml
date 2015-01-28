@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	">
+    <import resource="classpath:context-idgenerator/*.xml"/>
+    <import resource="contexts/config.xml"/>
+    <context:spring-configured/>
+    <tx:annotation-driven mode="aspectj"/>
+    <context:annotation-config/>
+
+    <context:component-scan base-package="com.samenea.seapay"/>
+    <bean id="paymentSessionFactory" class="com.samenea.seapay.session.model.SessionFactory"></bean>
+    <bean id="paymentTransactionFactory" class="com.samenea.seapay.transaction.model.TransactionFactory"></bean>
+    <bean id="orderFactory" class="com.samenea.seapay.merchant.model.OrderFactory"></bean>
+    <import resource="classpath:contexts-commons-hibernate/*.xml"/>
+    <!--<import resource="contexts/test.xml"/>-->
+    <import resource="contexts/mock.xml"/>
+
+    <import resource="classpath:contexts-tracking/*.xml"/>
+    <import resource="classpath*:/contexts/scheduler.xml"/>
+
+    <!--<import resource="classpath*:merchant-service-context.xml" />-->
+
+    <bean id="fullXmlDataFileLoader" class="org.dbunit.util.fileloader.FullXmlDataFileLoader"/>
+    <context:component-scan base-package="com.samenea.commons.tracking"/>
+    <!--<context:component-scan base-package="com.samenea.seapay.web.translation" />-->
+    <!--<bean id="trackingTranslator" class="com.samenea.seapay.web.translation.TrackingTranslator"></bean>-->
+
+</beans>

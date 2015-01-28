@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- Appenders -->
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p: %c [TID:%X{transactionId}] - %m%n "/>
+        </layout>
+    </appender>
+
+    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="File" value="${log.folder}/seapay.log"/>
+        <param name="Threshold" value="ALL"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %t - %p - %C{2}  | %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="EXCEPTIONS_FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="File" value="${log.folder}/seapay-exception.log"/>
+        <param name="Threshold" value="ALL"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %t - %p - %C{2} [TID:%X{transactionId}]  | %m%n"/>
+        </layout>
+    </appender>
+
+    <!--bank  appender -->
+    <!--Please for every new bank(plugin) implemented add a new appender like this and define new logger with this as appender-->
+    <appender name="MELLAT_GATEWAY" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="File" value="${log.folder}/banks/mellat/all.log"/>
+        <param name="Threshold" value="ALL"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %t - %p - %C{2} [TID:%X{transactionId}]  | %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="SADERAT_GATEWAY" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="File" value="${log.folder}/banks/saderat/all.log"/>
+        <param name="Threshold" value="ALL"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %t - %p - %C{2} [TID:%X{transactionId}]  | %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="SADERAT_UNSTABLE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="File" value="${log.folder}/banks/saderat/unstable.log"/>
+        <param name="Threshold" value="ALL"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %t - %p - %C{2} [TID:%X{transactionId}]  | %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="MELLAT_VERIFY" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="File" value="${log.folder}/banks/mellat/verify.log"/>
+        <param name="Threshold" value="ALL"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %t - %p - %C{2} [TID:%X{transactionId}]  | %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- Application Loggers -->
+    <logger name="com.samenea">
+        <level value="debug"/>
+    </logger>
+
+
+    <!--Mellat bank logger-->
+    <logger name="com.samenea.seapay.bank.service.gateway.plugin.mellat">
+        <level value="debug"/>
+        <appender-ref ref="MELLAT_GATEWAY"/>
+    </logger>
+
+    <!-- Mellat verify response logger -->
+    <logger name="com.samenea.seapay.bank.service.gateway.plugin.mellat.MellatGatewayVerifier">
+        <level value="debug"/>
+        <appender-ref ref="MELLAT_VERIFY"/>
+    </logger>
+
+    <logger name="com.samenea.seapay.web.controller.TransactionUnstableController">
+        <level value="debug"/>
+        <appender-ref ref="SADERAT_UNSTABLE"/>
+
+    </logger>
+
+    <!--Saderat bank logger-->
+    <logger name="com.samenea.seapay.bank.service.gateway.plugin.saderat">
+        <level value="debug"/>
+        <appender-ref ref="SADERAT_GATEWAY"/>
+    </logger>
+
+
+    <!--EXCEPTION logger-->
+    <logger name="EXCEPTION_LOG.com.samenea" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="EXCEPTIONS_FILE"/>
+    </logger>
+
+    <!-- Root Logger -->
+    <root>
+        <priority value="INFO"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</log4j:configuration>

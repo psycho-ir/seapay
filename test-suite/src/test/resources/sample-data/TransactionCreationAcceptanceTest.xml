@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+    <table name="XTRANSACTION">
+        <column>id</column>
+        <column>version</column>
+        <column>amount</column>
+        <column>description</column>
+        <column>lastupdatedate</column>
+        <column>startDate</column>
+        <column>status</column>
+        <column>transactionid</column>
+    </table>
+    <table name="MERCHANT">
+        <column>id</column>
+        <column>version</column>
+        <column>merchantId</column>
+        <column>password</column>
+        <column>title</column>
+        <row>
+            <value description="id">-1</value>
+            <value description="version">0</value>
+            <value description="merchantId">M-100</value>
+            <value description="password">123456</value>
+            <value description="title">title</value>
+        </row>
+    </table>
+    <table name="SERVICE">
+        <column>id</column>
+        <column>version</column>
+        <column>servicename</column>
+        <row>
+            <value description="id">-1</value>
+            <value description="version">0</value>dd
+            <value description="servicename">S-100</value>
+        </row>
+    </table>
+    <table name="XORDER">
+        <column>id</column>
+        <column>version</column>
+        <column>callbackurl</column>
+        <column>customerid</column>
+        <column>orderid</column>
+        <column>servicename</column>
+        <column>transactionid</column>
+        <column>merchant_id</column>
+    </table>
+    <table name="MERCHANT_SERVICE">
+        <column>MERCHANT_ID</column>
+        <column>SERVICES_ID</column>
+        <row>
+            <value>-1</value>
+            <value>-1</value>
+        </row>
+    </table>
+    <table name="XSESSION">
+        <column>ID</column>
+        <column>Version</column>
+        <column>createdate</column>
+        <column>merchantID</column>
+        <column>serviceId</column>
+        <column>sessionid</column>
+        <row>
+            <value>-1</value>
+            <value>0</value>
+            <value>2012-03-02 12:12:12</value>
+            <value>M-100</value>
+            <value>S-100</value>
+            <value>7323df46-cf87-4560-be3b-39ec3d2b9047</value>
+        </row>
+
+    </table>
+
+
+</dataset>

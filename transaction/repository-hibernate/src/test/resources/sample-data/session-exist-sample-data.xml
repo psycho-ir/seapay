@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <table name="XSESSION">
+        <column>id</column>
+        <column>version</column>
+        <column>merchantId</column>
+        <column>serviceId</column>
+        <column>sessionId</column>
+        <column>createDate</column>
+        <row>
+            <value>-1</value>
+            <value>0</value>
+            <value>M-100</value>
+            <value>S-100</value>
+            <value>S-100</value>
+            <value>2012-03-02 12:12:12</value>
+        </row>
+    </table>
+</dataset>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mockito="http://www.mockito.org/spring/mockito"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.mockito.org/spring/mockito http://www.mockito.org/spring/mockito.xsd">
+    <mockito:mock id="seapayGatewayWebService" class="com.samenea.seapay.client.SeapayGatewayWebService" />
+    <mockito:mock id="orderService" class="com.samenea.seapay.client.OrderService" />
+    <mockito:mock id="paymentSession" class="com.samenea.seapay.client.PaymentSession" />
+    <mockito:mock id="paymentManager" class="com.samenea.seapay.client.PaymentManager" />
+    <!--<mockito:mock id="environment" class="com.samenea.commons.component.utils.UserContext" />-->
+    <mockito:mock id="environment" class="com.samenea.commons.component.utils.Environment" />
+    <!--Defined to make tests with @Transactional pass-->
+    <mockito:mock id="transactionManager" class="org.springframework.transaction.PlatformTransactionManager"/>
+
+    <mockito:mock id="trackingService" class="com.samenea.commons.tracking.service.TrackingService" />
+</beans>

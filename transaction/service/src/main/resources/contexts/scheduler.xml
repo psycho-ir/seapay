@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+    <task:scheduled-tasks scheduler="myScheduler">
+        <task:scheduled ref="transactionInvestigatorService" method="runInvestigation"  fixed-delay="#{${investigation.delayTime}*1000}"/>
+        <task:scheduled ref="transactionExpirationService" method="run"  fixed-delay="#{${investigation.delayTime}*1000}"/>
+    </task:scheduled-tasks>
+
+    <task:scheduler id="myScheduler" pool-size="1"/>
+
+    <!--<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">-->
+        <!--<property name="corePoolSize" value="2" />-->
+        <!--<property name="maxPoolSize" value="5" />-->
+        <!--<property name="queueCapacity" value="5" />-->
+        <!--&lt;!&ndash;<property name="waitForTasksToCompleteOnShutdown" value="true" />&ndash;&gt;-->
+        <!--<property name="rejectedExecutionHandler">-->
+            <!--<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="taskScheduler" class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">-->
+        <!--<property name="poolSize" value="10" />-->
+        <!--&lt;!&ndash;<property name="waitForTasksToCompleteOnShutdown" value="true" />&ndash;&gt;-->
+        <!--<property name="rejectedExecutionHandler">-->
+            <!--<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+</beans>

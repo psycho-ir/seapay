@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<table name="XSESSION">
+		<column>id</column>
+		<column>version</column>
+		<column>merchantId</column>
+		<column>serviceId</column>
+		<column>sessionId</column>
+		<column>createDate</column>
+	</table>
+	<table name="XTRANSACTION">
+		<column>id</column>
+		<column>version</column>
+		<column>amount</column>
+		<column>description</column>
+		<column>lastupdatedate</column>
+		<column>startdate</column>
+		<column>status</column>
+		<column>transactionid</column>
+	</table>
+</dataset>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mockito="http://www.mockito.org/spring/mockito"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.mockito.org/spring/mockito http://www.mockito.org/spring/mockito.xsd">
+
+<mockito:mock id="merchantService" class="com.samenea.seapay.merchant.IMerchantService"/>
+<mockito:mock id="idGeneratorFactory" class="com.samenea.commons.idgenerator.service.IDGeneratorFactory"/>
+<mockito:mock id="transactionFactory" class="com.samenea.seapay.transaction.model.ITransactionFactory"/>
+<mockito:mock id="bankTransactionService" class="com.samenea.seapay.bank.model.IBankTransactionService" />
+<mockito:mock id="transactionService" class="com.samenea.seapay.transaction.ITransactionService" />
+
+</beans>

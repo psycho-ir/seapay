@@ -1,0 +1,23 @@
+<!-- NOTE: If you're working offline, you might have to change the DOCTYPE 
+	to the following: <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate 
+	Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> -->
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="show_sql">${hibernate.showSql}</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <mapping class="com.samenea.seapay.bank.model.BankTransactionInfo" />
+        <mapping class="com.samenea.commons.idgenerator.model.HiLoGeneratorModel" />
+        <mapping class="com.samenea.seapay.bank.model.BankAccount" />
+        <mapping class="com.samenea.seapay.bank.model.Bank" />
+		<mapping class="com.samenea.seapay.transaction.model.Transaction" />
+		<mapping class="com.samenea.seapay.session.model.Session" />
+		<mapping class="com.samenea.seapay.merchant.model.Order" />
+		<mapping class="com.samenea.seapay.merchant.model.Merchant" />
+		<mapping class="com.samenea.seapay.merchant.model.Service" />
+
+	</session-factory>
+
+</hibernate-configuration>

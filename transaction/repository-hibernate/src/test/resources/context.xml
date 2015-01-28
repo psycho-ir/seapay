@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+    <context:spring-configured />
+    <context:annotation-config />
+    <tx:annotation-driven mode="aspectj"/>
+    <context:component-scan base-package="com.samenea.seapay" />
+    <import resource="classpath:/contexts-commons-hibernate/datasource.xml" />
+	<import resource="classpath:/contexts-commons-hibernate/repository.xml" />
+	<import resource="classpath:/contexts-commons-hibernate/transaction-manager.xml" />
+	<import resource="classpath:/contexts/mock.xml" />
+	<import resource="classpath:/contexts/config.xml" />
+
+
+    <bean id="environment" class="com.samenea.commons.component.utils.DefaultEnvironment"/>
+    <bean id="fullXmlDataFileLoader" class="org.dbunit.util.fileloader.FullXmlDataFileLoader"/>
+</beans>
+       

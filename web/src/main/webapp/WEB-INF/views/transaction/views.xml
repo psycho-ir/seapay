@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration
+2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition name="transaction/create" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/transaction/TransactionCreation.jsp"></put-attribute>
+    </definition>
+    <definition name="transaction/search" template="/WEB-INF/views/common/Master.jsp">
+        <put-attribute name="body" value="/WEB-INF/views/transaction/TransactionSearch.jsp"></put-attribute>
+    </definition>
+    <definition name="admin/upload" template="/WEB-INF/views/common/Master.jsp">
+        <put-attribute name="body" value="/WEB-INF/views/transaction/upload.jsp"></put-attribute>
+    </definition>
+    <definition name="admin/uploadResult" template="/WEB-INF/views/common/Master.jsp">
+        <put-attribute name="body" value="/WEB-INF/views/transaction/uploadResult.jsp"></put-attribute>
+    </definition>
+</tiles-definitions>
